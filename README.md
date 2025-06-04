@@ -71,7 +71,7 @@ cd your-repo-name
 npm install
 
 # 4. Create a `.env` file and add your Gemini API key
-VITE_GEMINI_API_KEY=your_api_key_here
+VITE_GEMINI_API_KEY=AIzaSyD_T1PmkKaLVt17sCdRbTjgfUfySuFfpz4 # 
 
 # 5. Start the development server
 npm run dev
