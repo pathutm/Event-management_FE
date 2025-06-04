@@ -1,89 +1,120 @@
+# Event Management Platform – Frontend
 
-Event Management - Create Event Page
-This React component provides a user interface to create events with details like title, venue, location, date, time, cost, and an image upload. It integrates Google’s Gemini API to generate a short event description automatically based on user inputs.
+This is the frontend file of the Event Management Platform, built with **React (functional components)** and structured for **scalability, reusability, and clarity**. It provides a seamless UI for event creation, leveraging **Google Gemini API** for smart description generation and **React Dropzone** for intuitive image upload.
 
-Features
-Form inputs for event details (title, venue, location, date, time, type, cost)
+## Technologies Used
 
-Drag and drop or click to upload event image
+| Category       | Stack/Library          |
+|----------------|------------------------|
+| Framework      | React (Vite + ESM)     |
+| State Handling | React useState/useEffect/useCallback |
+| File Upload    | react-dropzone         |
+| API Integration| Fetch API              |
+| Styling        | Inline CSS styling     |
+| AI Integration | Google Gemini API      |
+| Routing        | react-router-dom       |
 
-Auto-generate engaging event descriptions using Google Gemini API
 
-Submit event data with image (encoded in base64) to backend API
+## Features
 
-Displays success alert and redirects to event list on successful creation
+- Clean, responsive, and intuitive UI
+- Form-driven event creation (title, venue, location, date, time, type, cost, image)
+- Event image upload - **functional along with DB : MongoDB**
+- Smart event description generation using **Google Gemini API**
+- Secure form submission with **JWT-based auth**
+- Displays success alert and redirects on successful creation
+- Fully inline-styled – no external CSS files or Tailwind used
+- Structured with **scalable components and custom React hooks will be developeed further**
+- Codebase designed with **clean separation and future extensibility in mind**
 
-Uses inline styling (no external CSS dependencies)
 
-Uses React hooks and react-dropzone for file handling
+Here,s the completely functional and maintainable code architecture i used
+## Folder Architecture (Based on Project Structure)
 
-Technologies Used
-React (with hooks)
 
-react-dropzone (for image upload)
+```bash
+src/
+├── assets/
+│   └── routes/
+│       └── react.svg
+├── constants/
+│   ├── avatars.jsx
+│   ├── buttons.jsx
+│   └── reusables.jsx
+├── pages/
+│   ├── admin/
+│   ├── auth/
+│   ├── routes/
+│   ├── user/
+│   ├── LandingPage.jsx
+│   └── NotFoundPage.jsx
+├── App.jsx             # Route configuration
+├── main.jsx            # React DOM Mount
+├── index.css           # (Optional Global Styles - not used much)
+├── index.html          # Vite entry HTML
+├── .env                # Store VITE_GEMINI_API_KEY
+├── package.json
+├── README.md
 
-React Router (useNavigate) for navigation after creation
+```
 
-Fetch API for backend and Gemini API calls
+## Setup Instructions
 
-Google Gemini Language API for text generation
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
 
-Setup Instructions
-Clone or Download this project
+# 2. Navigate to the frontend folder
+cd your-repo-name
 
-Install dependencies
+# 3. Install dependencies
+npm install
 
-bash
-Copy
-Edit
-npm install react react-dom react-router-dom react-dropzone
-Environment Variables
+# 4. Create a `.env` file and add your Gemini API key
+VITE_GEMINI_API_KEY=your_api_key_here
 
-Create a .env file in your root and add your Google Gemini API key:
-
-ini
-Copy
-Edit
-VITE_GEMINI_API_KEY= your_google_gemini_api_key_here
-Make sure to replace with your actual Gemini API key.
-
-Backend API
-
-The form submits to:
-
-bash
-Copy
-Edit
-http://localhost:5000/api/events/create
-Ensure your backend server is running and accepts POST requests at this endpoint with JSON payload containing the event data, including an optional base64-encoded image string (imageBase64).
-
-React Router Setup
-
-Make sure your app is wrapped with BrowserRouter to enable navigation, and you have a route for /event-list where users get redirected after event creation.
-
-Example:
-
-jsx
-Copy
-Edit
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CreateEventPage from './CreateEventPage';
-import EventListPage from './EventListPage';
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/create-event" element={<CreateEventPage />} />
-        <Route path="/event-list" element={<EventListPage />} />
-        {/* other routes */}
-      </Routes>
-    </BrowserRouter>
-  );
-}
-Start the React app
-
-bash
-Copy
-Edit
+# 5. Start the development server
 npm run dev
+
+```
+Then visit http://localhost:5173 to view the app in your browser.
+
+
+## API Endpoint (Backend Integration)
+The form submits data to:
+
+```
+ POST http://localhost:5000/api/events/create
+```
+
+Payload includes:
+
+Title, Venue, Date, Time, Cost, Location, Description
+
+Image (as base64 string)
+
+You’ll also need a valid ```Bearer token``` stored in localStorage under ```token```
+
+ ## Status
+ UI and validation completed
+
+ Gemini API working
+
+ MongoDB image upload tested
+
+ Auth and redirect integrated
+
+ Production-ready frontend for hackathon/demo purposes
+
+ ## Done by
+
+ Pathu T
+ 
+ Intern
+ 
+ SNS InnovationHub
+
+Thank you for taking the time. Your feedback is greatly appreciated!
+
+
+
