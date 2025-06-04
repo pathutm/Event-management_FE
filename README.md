@@ -52,7 +52,7 @@ src/
 ├── main.jsx            # React DOM Mount
 ├── index.css           # (Optional Global Styles - not used much)
 ├── index.html          # Vite entry HTML
-├── .env                # Store VITE_GEMINI_API_KEY
+├── .env                # Stores the VITE_GEMINI_API_KEY
 ├── package.json
 ├── README.md
 
@@ -62,22 +62,22 @@ src/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/username/your-repo-name.git
 
 # 2. Navigate to the frontend folder
-cd your-repo-name
+cd repo-name
 
 # 3. Install dependencies
 npm install
 
-# 4. Create a `.env` file and add your Gemini API key
+# 4. Create a `.env` file and add Gemini API key
 VITE_GEMINI_API_KEY=AIzaSyD_T1PmkKaLVt17sCdRbTjgfUfySuFfpz4 # 
 
 # 5. Start the development server
 npm run dev
 
 ```
-Then visit http://localhost:5173 to view the app in your browser.
+Then visit http://localhost:5173 to view the app in browser.
 
 
 ## API Endpoint (Backend Integration)
